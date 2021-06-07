@@ -5,7 +5,7 @@ class TaskNotesController < ApplicationController
   def index
     @task_notes = TaskNote.all
 
-    render json: @task_notes
+    render json: @task_notes, only: [:content, :task_id]
   end
 
   # GET /task_notes/1

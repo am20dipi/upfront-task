@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
 
-    render json: @tasks
+    render json: @tasks, only: [:name, :completed, :task_date], include: :task_notes
   end
 
   # GET /tasks/1

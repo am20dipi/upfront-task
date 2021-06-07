@@ -10,3 +10,8 @@
 Task.create!(name: "Go to carwash", task_date: "", completed: true)
 Task.create!(name: "Pick up grandma", task_date: "", completed: true)
 Task.create!(name: "Go to bank", task_date: "Tuesday", completed: false)
+
+
+
+TaskNote.create!(content: "Auto Shine is having a sale on full carwashes.", task_id: 1)
+TaskNote.create!(content: "Bring cash for tip!", task_id: 1)
