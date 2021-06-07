@@ -26,18 +26,20 @@ const handleClick = () => {
     // parse the response body into JSON friendly format => array
     .then(json => renderTasks(json))
     // pass the whole array to the function renderTasks to iterate each task
-    .catch(error => console.log("Error!!!"))
+   // .catch(error => console.log("Error!!!"))
 }
 
 const renderTasks = (tasks) => {
     tasks.forEach(element => {
         // calling forEach on tasks array 
         // element = current element
+        
         const li = document.createElement("li")
         // declaring and assigning a variable
         // storing the created Element inside the variable
         li.innerHTML = `
             <h2 class="task-name">${element.name}</h2>
         `
-    })
+        ulTasksList().appendChild(li)
+    });
 }
