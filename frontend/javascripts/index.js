@@ -21,25 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
 const handleClick = () => {
     // Arrow function => 
     // Fetch requests return Promises
+    //debugger
     fetch('http://localhost:3000/tasks')
-    .then(response => response.json())
+    .then(resp => resp.json())
     // parse the response body into JSON friendly format => array
     .then(json => renderTasks(json))
     // pass the whole array to the function renderTasks to iterate each task
    // .catch(error => console.log("Error!!!"))
+    .catch(handleError)
+   //console.log(json)
+}
+
+const handleError = (error) => {
+    console.log(error)
 }
 
 const renderTasks = (tasks) => {
-    tasks.forEach(element => {
+    //console.log(data)
+    Object.keys(tasks).forEach(function(element) {
         // calling forEach on tasks array 
         // element = current element
-        
         const li = document.createElement("li")
-        // declaring and assigning a variable
-        // storing the created Element inside the variable
+        // declaring and assigning a variable; storing the created Element inside the variable
         li.innerHTML = `
             <h2 class="task-name">${element.name}</h2>
+            <h4 class="task-date">${element.task_date}</h4>
+            
         `
-        ulTasksList().appendChild(li)
-    });
+        console.log(tasks)
+        //ulTasksList().appendChild(li)
+    }); 
 }
+
