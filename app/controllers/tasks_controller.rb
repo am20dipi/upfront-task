@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     #options = {}
     # create an options hash
     #options[:include] = [:task_notes]
-    # within the options hash, create a key called "task_notes"
+    # within the options hash, create a key called "include" with value of "task_notes"
     render json: TaskSerializer.new(@tasks) # only: [:name, :completed, :task_date], include: :task_notes 
   end
 
