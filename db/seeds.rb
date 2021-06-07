@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Task.create!(name: "Go to carwash", done_by: "", completed: true)
-Task.create!(name: "Pick up grandma", done_by: "", completed: true)
-Task.create!(name: "Go to bank" done_by: "Tuesday", completed: false)
+Task.create!(name: "Go to carwash", task_date: "", completed: true)
+Task.create!(name: "Pick up grandma", task_date: "", completed: true)
+Task.create!(name: "Go to bank", task_date: "Tuesday", completed: false)
